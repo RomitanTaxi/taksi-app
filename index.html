@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
 <meta charset="UTF-8">
-<title>1067 Taxi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1022 Taxi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
   font-family: Arial;
-  background: #f5f5f5;
+  background: #f2f2f2;
   padding: 20px;
 }
 h2 {
   text-align: center;
 }
-input, textarea, button {
+input, button {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -26,17 +26,22 @@ button {
 }
 </style>
 </head>
+
 <body>
 
-<h2>🚖 1067 Taxi Buyurtma</h2>
+<h2>🚖 1022 Taxi</h2>
 
-<input type="text" placeholder="Ismingiz">
+<input type="text" placeholder="Qayerdan">
+<input type="text" placeholder="Qayerga">
 <input type="tel" placeholder="Telefon raqam">
-<textarea placeholder="Qayerdan → Qayerga"></textarea>
 
-<button onclick="alert('Zakazingiz qabul qilindi')">
-Zakaz berish
-</button>
+<button onclick="buyurtma()">Buyurtma berish</button>
+
+<script>
+function buyurtma() {
+  alert("Buyurtma qabul qilindi! Tez orada bog‘lanamiz.");
+}
+</script>
 
 </body>
 </html>
