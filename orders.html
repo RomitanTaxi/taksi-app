@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Buyurtmalar</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body { font-family: Arial; background:#fff; padding:20px; }
+h2 { text-align:center; }
+.order { border:1px solid #ccc; padding:10px; margin:10px 0; }
+button { width:100%; padding:10px; background:red; color:white; border:none; }
+</style>
+</head>
+<body>
+
+<h2>📋 Buyurtmalar</h2>
+
+<div id="list"></div>
+
+<button onclick="clearOrders()">🗑 Tozalash</button>
+
+<script>
+let orders = JSON.parse(localStorage.getItem("orders") || "[]");
+let list = document.getElementById("list");
+
+orders.forEach(o => {
+  list.innerHTML += `
+    <div class="order">
+      <b>Qayerdan:</b> ${o.from}<br>
+      <b>Qayerga:</b> ${o.to}<br>
+      <b>Telefon:</b> ${o.phone}<br>
+      <small>${o.time}</small>
+    </div>
+  `;
+});
+
+function clearOrders() {
+  localStorage.removeItem("orders");
+  location.reload();
+}
+</script>
+
+</body>
+</html>
